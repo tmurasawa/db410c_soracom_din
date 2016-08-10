@@ -34,7 +34,7 @@ def tilt(gpio):
 				cnt += 1
 			else:
 				cnt = 0
-			if cnt == 10:
+			if cnt == 15:
 				pin_current = not(pin_current)
 
 			if pin_current:
@@ -75,7 +75,6 @@ if __name__ == '__main__':
     client = mqtt.Client()
     client.on_connect = on_connect
     client.on_disconnect = on_disconnect
-    client.on_disconnect = on_disconnect
     #client.on_message = on_message
 
 		## if you use Scalenics WITHOUT SORACOM,comment out below..
@@ -85,7 +84,5 @@ if __name__ == '__main__':
     client.connect("beam.soracom.io", 1883, 10)
 
     with GPIO(pins) as gpio:
-
         tilt(gpio)
-
 
