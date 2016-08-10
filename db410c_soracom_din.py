@@ -34,7 +34,7 @@ def tilt(gpio):
 				cnt += 1
 			else:
 				cnt = 0
-			if cnt == 15:
+			if cnt == 20:
 				pin_current = not(pin_current)
 
 			if pin_current:
